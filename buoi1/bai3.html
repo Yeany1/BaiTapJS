@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // § Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110 
+        // § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+        // § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+        function caculate({dophinsScore, koalasScore}) { 
+            var dophinsScoreAvg = dophinsScore.reduce((result, val) => {
+                return result + val/dophinsScore.length; 
+            }, 0).toFixed(2)
+            
+            var koalasScoreAvg = koalasScore.reduce((result, val) => {
+                return result + val/koalasScore.length; 
+            }, 0).toFixed(2)
+            if(Math.max(dophinsScoreAvg, koalasScoreAvg) < 100) {
+                console.log("No team wins the trophy");
+            } else { 
+                if(dophinsScoreAvg > koalasScoreAvg) {
+                    console.log(`Dophins won(${dophinsScoreAvg}), Koalas has been defeat (${koalasScoreAvg})`);
+                } else if ( dophinsScoreAvg < koalasScoreAvg) {
+                    console.log(`Koalas won(${koalasScoreAvg}), Dophins has been defeat (${dophinsScoreAvg})`);
+                } else {
+                    console.log(`Draw (${dophinsScoreAvg})`);
+                }
+            }
+        
+        }
+
+        console.log("\nData 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110 ");
+        caculate({
+            dophinsScore: [96, 108, 89], 
+            koalasScore: [88, 91, 110], 
+        })
+
+        console.log("\nData Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123");
+        caculate({
+            dophinsScore: [97, 112, 101], 
+            koalasScore: [109, 95, 123], 
+        })
+
+        console.log("\nData Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106");
+        caculate({
+            dophinsScore: [112, 97, 101], 
+            koalasScore: [109, 95, 106], 
+        })
+    </script>
+</body>
+</html>
