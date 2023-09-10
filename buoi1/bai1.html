@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function compareBMI(marksWeight, marksTall, johnWeight, johnTall) {
+            var marksBMI = marksWeight / marksTall ** 2;
+            var johnBMI = johnWeight / johnTall ** 2;
+            var markHigherBMI = marksBMI > johnBMI;
+            console.log('Marks\'s Weight: ', marksWeight);
+            console.log('Marks\'s Tall: ', marksTall);
+            console.log('=> Marks\'s BMI: ', marksBMI);
+            console.log('JohnBMI\'s Weight: ', johnWeight);
+            console.log('JohnBMI\'s Tall: ', johnTall);
+            console.log('=> JohnBMI\'s BMI: ', johnBMI);
+            console.log(`So Marks\s BMI ${markHigherBMI ? 'higher' : 'lower'} JohnBMI\'s BMI`);
+        }
+
+        // § Data 1: Marks weights 78 kg and is 1.69 m tall. 
+        // John weights 92 kg and is 1.95m tall.
+        console.log('case 1\n');
+        compareBMI(78, 1.69, 92, 1.95); 
+
+        // § Data 2: Marks weights 95 kg and is 1.88 m tall. 
+        // John weights 85 kg and is 1.76m tall.
+        console.log('case 2\n');
+        compareBMI(95, 1.88, 85, 1.76); 
+
+    </script>
+</body>
+
+</html>
